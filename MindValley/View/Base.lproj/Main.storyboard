@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BPl-1W-6mD">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MindValley" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C1N-li-G9m">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="mrC-32-zXx" customClass="ImagesTableViewCell" customModule="MindValley" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrC-32-zXx" id="LXU-XA-90B">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gsp-Sq-hzM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gsp-Sq-hzM" firstAttribute="leading" secondItem="LXU-XA-90B" secondAttribute="leading" id="71N-dd-aBU"/>
+                                                <constraint firstItem="Gsp-Sq-hzM" firstAttribute="top" secondItem="LXU-XA-90B" secondAttribute="top" id="Bdv-i9-Lj4"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gsp-Sq-hzM" secondAttribute="bottom" id="as6-HX-0g8"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gsp-Sq-hzM" secondAttribute="trailing" id="uc9-4Y-yrm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="listImages" destination="Gsp-Sq-hzM" id="edG-gT-Gdk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C1N-li-G9m" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LWD-8I-pro"/>
+                            <constraint firstItem="C1N-li-G9m" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UUB-Ai-h0K"/>
+                            <constraint firstItem="C1N-li-G9m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZcS-K0-JrB"/>
+                            <constraint firstAttribute="bottom" secondItem="C1N-li-G9m" secondAttribute="bottom" id="xPe-L9-b39"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tgQ-wI-IHB">
+                        <barButtonItem key="leftBarButtonItem" title="Clear Memory" id="G4J-G8-Mxp">
+                            <connections>
+                                <action selector="clearMemoryButton:" destination="BYZ-38-t0r" id="gGu-XJ-SpF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Clear Disk" id="YWN-if-YIK">
+                            <connections>
+                                <action selector="clearCacheButton:" destination="BYZ-38-t0r" id="u5R-tV-ovV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="C1N-li-G9m" id="Rgh-tV-tfL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.8" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WQ9-8k-xXs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BPl-1W-6mD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qO3-tx-z50">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TZL-hr-Drr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wf7-j6-4aW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
